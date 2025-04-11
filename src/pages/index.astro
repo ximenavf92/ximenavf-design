@@ -7,6 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     
     <div class="intro-blurb">
     <h1>Designing Digital Experiences</h1>
+    <img src="/images/morse-pattern-short.svg" alt="" class="morse-divider-short" />
     <p class="lead-text">
       <strong>¡Hola!</strong> 👋 My name is Ximena (He-Men-Ah), I am a web & product designer in San Antonio, TX who aims to create engaging, valuable, and accessible digital user experiences.
     </p>
@@ -55,12 +56,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       grid-template-rows: auto;
       gap: 8rem;
     }
-    .figma-hero img {
+    .figma-hero img.hero-image {
       max-width: 450px;
   }
 }
 
-  .figma-hero img {
+  .figma-hero img.hero-image {
     width: 100%;
     object-fit: contain;
   }
@@ -70,6 +71,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1.2;
     margin-bottom: 1rem;
   }
+
+  .figma-hero img.morse-divider-short {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    margin-bottom: .5rem;
+    text-align: left;
+  }
+
 .intro-blurb {
     margin-bottom: 2rem;
   }
@@ -99,7 +110,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       max-width: 800px;
     }
      
-    .figma-hero img {
+    .figma-hero img.hero-image {
       width: 100%;
       min-width: 200px;
       max-width: 200px;
