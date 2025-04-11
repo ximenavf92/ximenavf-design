@@ -1,5 +1,5 @@
 /* Custom fonts. */
-@font-face {
+/* @font-face {
   font-family: 'Pally Variable';
   src: url('/fonts/pally-variable/Pally-Variable.woff2') format('woff2');
   src: url('/fonts/pally-variable/Pally-Variable.woff') format('woff');
@@ -7,7 +7,7 @@
   font-weight: 400 700;
   font-display: swap;
   font-style: normal;
-}
+} */
 
 /* Variables */
 :root {
@@ -144,7 +144,7 @@ a.skip-main:active {
 
 .layout-root {
   width: 100%;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
 }

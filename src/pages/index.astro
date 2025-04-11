@@ -40,7 +40,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .figma-hero {
     width: 100%;
     margin: 2rem auto;
-    max-width: 1200px;
+    max-width: 1300px;
     display: grid;
     grid-auto-columns: minmax(200px, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -98,16 +98,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       margin: 2rem auto;
       max-width: 800px;
     }
+     
     .figma-hero img {
       width: 100%;
       min-width: 200px;
-      max-width: 300px;
-      align-self: center;
+      max-width: 200px;
+      justify-self: start;
+      text-align: left;
       grid-row: 1;
-
-      .figma-hero h1 {
-        font-size: 2rem;
-      }
+    }
+      h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-top: 1.5rem;
+    }
   }
-}
+
 
