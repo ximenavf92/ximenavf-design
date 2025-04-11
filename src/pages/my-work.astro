@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const caseStudies = await getCollection('caseStudies');
+
+const all = [...projects, ...caseStudies];
+---
+<BaseLayout>
+  <h2>My Work</h2>
+  <section class="grid">
+    {all.map(entry => (
+      <ProjectCard {...entry.data} />
+    ))}
+  </section>
+</BaseLayout>

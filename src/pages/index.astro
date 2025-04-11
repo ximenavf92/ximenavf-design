@@ -1,11 +1,100 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BrandButton from '../components/BrandButton.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout>
+  <section class="figma-hero">
+    
+    <div class="intro-blurb">
+    <h1>Designing Digital Experiences</h1>
+    <p class="lead-text">
+      <strong>¡Hola!</strong> 👋 My name is Ximena (He-Men-Ah), I am a web & product designer in San Antonio, TX who aims to create engaging, valuable, and accessible digital user experiences.
+    </p>
+    <p>Previously a Designer at <a href="https://astro.build/" class="body-link">Astro</a> and <a href="https://www.utsa.edu/" class="body-link">UTSA</a>. With over 8 years of experience in agency and in-house web and graphic design, I am currently freelancing and on a journey to discover the next chapter in my career.</p>
+    <p class="ribbon">
+      I am currently building this site using Astro, in the meantime my full portfolio is a Figma prototype. Click the button below to view it.
+    </p>
+    <BrandButton
+      href="mailto: hola@ximenavf.com"
+      icon="/images/email-icon.svg"
+      iconAlt=""
+      variant="primary">
+      Send me an email
+    </BrandButton>
 
-<Layout>
-	<Welcome />
-</Layout>
+    <BrandButton
+    href="https://www.figma.com/proto/F1joQ6jtpYZP8wGW0Cdjdd/XimenaVf.design?page-id=&node-id=50-1649&viewport=5221%2C-11185%2C0.57&t=RhOMhJbCeAAicldz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=50%3A1649"
+    icon="/images/figma-icon.svg"
+    iconAlt=""
+    variant="accent-primary"
+  >
+    View portfolio prototype
+  </BrandButton>
+
+   </div>
+   <img src="/images/hero-image-ximena.png" alt="A close up photo of Ximena, a curly haired woman in her 30s wearing a bright pink shirt and hugging a mechanical keyboard while she looks up away from the camera with a smirk." class="hero-image" />
+  </section>
+</BaseLayout>
+
+<style>
+  .figma-hero {
+    width: 100%;
+    margin: 2rem auto;
+    max-width: 1400px;
+    display: grid;
+    grid-auto-columns: minmax(200px, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .figma-hero img {
+    width: 100%;
+    object-fit: contain;
+    
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+.intro-blurb {
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    margin-bottom: 2rem;
+  }
+
+  .lead-text {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .lead-text strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 1200px) {
+    .figma-hero {
+      width: 100%;
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+    .figma-hero img {
+      width: 100%;
+      min-width: 200px;
+      max-width: 300px;
+      align-self: center;
+      grid-row: 1;
+
+      .figma-hero h1 {
+        font-size: 2rem;
+      }
+  }
+}
+
