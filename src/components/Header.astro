@@ -1,0 +1,207 @@
+---
+const isMobile = false; // optional prop if we ever want to toggle manually
+const { pathname } = Astro.url;
+---
+
+<!-- Desktop top nav -->
+<header class="header">
+  <div class="nav-inner">
+    <img src="/images/logo.svg" alt="Ximena Vila Ferral" class="logo" />
+    <nav class="nav-links">
+          <ul>
+            <!-- <li><a href="/about" class={pathname === '/about' ? 'active' : ''} target="_parent" rel="noopener">about me</a></li> -->
+            <!-- <li><a href="/my-work" class={pathname === '/my-work' ? 'active' : ''} target="_parent" rel="noopener">my work</a></li> -->
+            <li><a href="/public/resume-0924.pdf" class={pathname === '/resume' ? 'active' : ''} target="_parent" rel="noopener"><strong>resume</strong></a></li>
+          </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile top logo only -->
+<header class="mobile-header">
+  <img src="/images/logo.svg" alt="Ximena Vila Ferral" class="logo" />
+</header>
+
+<!-- Mobile bottom nav -->
+<!-- <nav class="bottom-nav">
+  <ul>
+      <li><a href="/"><img src="/images/logo-icon.svg" alt="Home"/></a></li>
+      <li><a href="/about" class={pathname === '/about' ? 'active' : ''} target="_parent" rel="noopener">about me</a></li>
+      <li><a href="/my-work" class={pathname === '/my-work' ? 'active' : ''} target="_parent" rel="noopener">my work</a></li>
+    <li><a href="/resume-0924.pdf" class={pathname === '/resume' ? 'active' : ''} target="_parent" rel="noopener"><strong>resume</strong></a></li>
+  </ul>
+</nav> -->
+
+<!-- Component Styles -->
+<style>
+/* Desktop top nav */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--color-light);
+  box-shadow: 0 8px 0 #2d7d99;
+  z-index: 1000;
+  padding: 1.5rem 4rem;
+  margin: 0 5rem;
+  display: none;
+  border: solid 3px var(--color-dark);
+  border-top: none;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.nav-inner {
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 65px;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #253e89;
+}
+
+.nav-links ul,
+.bottom-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a,
+.bottom-nav a {
+  position: relative;
+  color: #253e89;
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+}
+
+/* Fallback underline (solid color) */
+.nav-links a::after,
+.bottom-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 4px;
+  background-color: var(--color-primary); /* fallback color */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Fancy underline image layered on top */
+/* .nav-links a::before,
+.bottom-nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 8px;
+  background: url('/images/nav-underline.svg') no-repeat center bottom;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} */
+
+/* Show on hover/active */
+.nav-links a:hover::after,
+.nav-links a:hover::before,
+.bottom-nav a:hover::after,
+.bottom-nav a:hover::before,
+.nav-links a.active::after,
+.nav-links a.active::before,
+.bottom-nav a.active::after,
+.bottom-nav a.active::before {
+  opacity: 1;
+}
+
+.nav-links a::after,
+.bottom-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 8px;
+  background: url('/images/nav-underline.svg') no-repeat center bottom;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-links a:hover::after,
+.bottom-nav a:hover::after,
+.nav-links a.active::after,
+.bottom-nav a.active::after {
+  opacity: 1;
+}
+
+
+/* Mobile top logo */
+.mobile-header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: white;
+  box-shadow: 0 4px 0 var(--color-primary);
+  border: solid 2px var(--color-dark);
+  border-top: none;;
+}
+
+.mobile-header .logo {
+  height: 60px;
+}
+
+/* Mobile bottom nav */
+.bottom-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -4px 0 var(--color-accent-secondary);
+  padding: 0.75rem;
+  z-index: 1000;
+  border: solid 2px var(--color-dark);
+  border-bottom: none;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.bottom-nav img {
+  height: 30px;
+}
+
+.bottom-nav a {
+  color: #253e89;
+  font-size: 1rem;
+}
+
+/* Responsive logic */
+@media (min-width: 768px) {
+  .header {
+    display: block;
+  }
+
+  .mobile-header,
+  .bottom-nav {
+    display: none;
+  }
+}
+</style>
+      

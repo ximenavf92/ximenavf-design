@@ -1,0 +1,179 @@
+<footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/ximenavilaf/"><span class="visually-hidden">LinkedIn</span><img src="/images/linkedin-icon.svg" alt=""></a></li>
+        <li><a href="https://dribbble.com/"><span class="visually-hidden">Dribbble</span><img src="/images/dribbble-icon.svg" alt=""></a></li>
+        <li><a href="https://bsky.app/profile/ximenavf.com"><span class="visually-hidden">BlueSky</span><img src="/images/bluesky-icon.svg" alt=""></a></li>
+        <li><a href="https://github.com/ximenavf92"><span class="visually-hidden">Github</span><img src="/images/github-icon.svg" alt=""></a></li>
+        <li><a href="mailto:hola@ximenavf.com"><span class="visually-hidden">Email Me</span><img src="/images/email-icon.svg" alt=""></a></li>
+    </ul>
+  
+      <p class="footer-credit">
+        &copy; 2025 | Ximena Vila Ferral<br />
+        Designed in <a href="https://figma.com" target="_blank" rel="noopener" class="body-link">Figma</a> & built using <a href="https://astro.build" target="_blank" rel="noopener" class="body-link">Astro</a>
+        with 💙 by Ximena Vf.
+      </p>
+    </div>
+  </footer>
+  
+<style>
+.site-footer {
+  margin-top: 4rem;
+  background: var(--color-light);
+  border-radius: 1.5rem 1.5rem 0 0;
+  border: 3px solid var(--color-dark);
+  border-bottom: none;
+  box-shadow: inset 0 10px 0 var(--color-secondary);
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-top: -1rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.social-links li a {
+  width: 55px;
+  height: 55px;
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  padding: .65rem;
+  background: white;
+  border: 2px solid #0f1c2e;
+  /* box-shadow: 0 6px 0 var(--icon-shadow-color, #0f1c2e); */
+  transition:
+      transform 0.15s ease,
+}
+
+.social-links li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.social-links li a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -2px;
+  right: 0;
+  top: 4px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: .75rem;
+  background: var(--icon-shadow-color, #0f1c2e);
+  border: 2px solid var(--color-dark);
+}
+
+/* Press-in effect */
+.social-links li a:hover {
+  transform: translateY(3px);
+}
+
+.social-links li a:hover::after {
+  background: none;
+  border: none;
+  top: 0;
+}
+
+
+/* Optional unique shadow per icon */
+.social-links li:nth-child(1) {
+  --icon-shadow-color: var(--color-primary);
+}
+.social-links li:nth-child(2) {
+  --icon-shadow-color: var(--color-accent-primary);
+}
+.social-links li:nth-child(3) {
+  --icon-shadow-color: var(--color-accent-secondary);
+}
+.social-links li:nth-child(4) {
+  --icon-shadow-color: var(--color-secondary);
+}
+.social-links li:nth-child(5) {
+  --icon-shadow-color: var(--color-accent-primary);
+}
+
+/* .social-links img {
+  width: 50px;
+  height: 50px;
+  border-radius: .75rem;
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid var(--color-dark);
+  box-shadow: 0 4px 0 var(--color-secondary);
+  transition: transform 0.2s ease;
+} */
+
+/* .social-links img:hover,
+.social-links li:hover::before {
+  transform: translateY(-3px);
+}
+
+.social-links li:hover::before {
+    transition-delay: 150ms;
+} */
+
+/* .social-links li:nth-child(-n+5):hover img {
+    box-shadow: none;
+    border-width: 3px;
+} */
+
+/* .social-links li:hover::before {
+   background: transparent;
+} */
+
+.social-links li {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+/* .social-links li::before {
+  content: '';
+  display: block;
+  width: 52px;
+  height: 57px;
+  position: relative;
+  top: 56px;
+  z-index: -1;
+  background: var(--color-dark);
+  border-radius: .75rem;
+} */
+
+/* Optional unique shadow per icon */
+/* .social-icons li:nth-child(1) img {
+  --icon-shadow-color: var(--color-primary);
+}
+.social-icons li:nth-child(2) img {
+  --icon-shadow-color: var(--color-accent-primary);
+}
+.social-icons li:nth-child(3) img {
+  --icon-shadow-color: var(--color-accent-secondary);
+}
+.social-icons li:nth-child(4) img {
+  --icon-shadow-color: var(--color-secondary);
+} */
+
+
+.footer-credit {
+  font-size: 0.9rem;
+  color: #253e89;
+  line-height: 1.4;
+}
+  </style>
