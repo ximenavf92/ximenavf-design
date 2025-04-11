@@ -8,13 +8,11 @@ const entry = await getEntry('projects', slug);
 if (!entry) throw new Error(`Project not found for slug: ${slug}`);
 const { data, body } = entry;
 
-export function getStaticPaths() {
-  const paths = [
-    { params: { slug: 'utsa-astro-website' } },
+export async function getStaticPaths() {
+  return [ // <-- Array
+    { params: { slug: "astro-website" } }
   ];
 }
-
-const { caseStudy } = Astro.params
 ---
 <BaseLayout>
   <article>

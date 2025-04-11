@@ -9,13 +9,11 @@ const entry = await getEntry('caseStudies', slug);
 if (!entry) throw new Error(`Case Study not found for slug: ${slug}`);
 const { data, body } = entry;
 
-export function getStaticPaths() {
-  const paths = [
-    { params: { slug: 'utsa-design-system' } },
+export async function getStaticPaths() {
+  return [ // <-- Array
+    { params: { slug: "utsa-design-website" } }
   ];
 }
-
-const { caseStudy } = Astro.params
 ---
 <BaseLayout>
   <article>
