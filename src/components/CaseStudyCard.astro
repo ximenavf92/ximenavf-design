@@ -1,0 +1,10 @@
+---
+const { title, slug, summary, image } = Astro.props;
+---
+<article style="margin-bottom: 2rem;">
+  <a href={`/projects/${slug}`}>
+    <img src={image} alt={title} style="width: 100%; max-width: 400px;" />
+    <h3>{title}</h3>
+    <p>{summary}</p>
+  </a>
+</article>
