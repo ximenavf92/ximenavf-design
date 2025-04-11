@@ -1,18 +1,27 @@
 ---
+import type { GetStaticPaths } from "astro";
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const { slug } = Astro.params as { slug: string };
-const entry = await getEntry('case-studies', slug);
+const entry = await getEntry('caseStudies', slug);
 
 if (!entry) throw new Error(`Case Study not found for slug: ${slug}`);
 const { data, body } = entry;
+
+export function getStaticPaths() {
+  const paths = [
+    { params: { slug: 'utsa-design-system' } },
+  ];
+}
+
+const { caseStudy } = Astro.params
 ---
 <BaseLayout>
   <article>
     <h1>{data.title}</h1>
-    <img src={data.image} alt={data.title} style="width: 100%; max-width: 600px;" />
-    <p>{data.summary}</p>
-    <div innerHTML={await body()} />
+    <img src={`${data.image}`} alt={data.title} style="width: 100%; max-width: 600px;" />
+    <p>{data.description}</p>
+    <!-- <div innerHTML={await body()} /> -->
   </article>
 </BaseLayout>
