@@ -1,12 +1,17 @@
 ---
 const isMobile = false; // optional prop if we ever want to toggle manually
 const { pathname } = Astro.url;
+import Logo from '../assets/images/logo.svg';
 ---
 
 <!-- Desktop top nav -->
 <header class="header">
   <div class="nav-inner">
-    <img src="/images/logo.svg" alt="Ximena Vila Ferral" class="logo" />
+    <!-- <img src="/images/logo.svg" alt="Ximena Vila Ferral" class="logo" /> -->
+     <a href="index.html" class="logo-link">
+      <Logo class="logo" />
+      <span class="visually-hidden">Ximena Vila Ferral</span>
+     </a>
     <nav class="nav-links">
           <ul>
             <!-- <li><a href="/about" class={pathname === '/about' ? 'active' : ''} target="_parent" rel="noopener">about me</a></li> -->
@@ -125,8 +130,7 @@ const { pathname } = Astro.url;
   opacity: 1;
 }
 
-.nav-links a::after,
-.bottom-nav a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -138,13 +142,6 @@ const { pathname } = Astro.url;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
-}
-
-.nav-links a:hover::after,
-.bottom-nav a:hover::after,
-.nav-links a.active::after,
-.bottom-nav a.active::after {
-  opacity: 1;
 }
 
 
