@@ -1,0 +1,5 @@
+# Redirects from what the browser requests to what we serve
+/pinterest-apprenticeship     https://www.figma.com/proto/F1joQ6jtpYZP8wGW0Cdjdd/XimenaVf.design?page-id=21:1939&node-id=3592-3525&p=f&viewport=3389,-11018,0.59&t=v0P6wbiVuDmOFzeg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3592:3525
+
+# fallback
+/*                             https://ximenavf.design/pinterest-apprenticeship
